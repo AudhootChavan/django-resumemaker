@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title> Resume Maker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'css/mystyles.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Allerta|Lato|Vollkorn" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+
+<!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-custom fixed-top" style="font-family: 'Abril Fatface', cursive;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/"> Home </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/form"> Resume Maker<span class="sr-only">(current)</span> </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+<!-- resume form -->
+
+    <div class = 'container'>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 class = 'text-center'> Resume Maker </h1>
+      <form method = 'post'>
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <!-- <div class="form-group {%if field.errors %}has-error{%endif%}">
+        {# render your field #}
+        </div> -->
+        <div class="alert alert-danger" role="alert">
+        {{ form.errors }}
+        </div>
+        {% endif %}
+
+
+
+
+
+        <div class="">
+            <br>
+            <br>
+            <br>
+
+          <div class="alert alert-success">
+          <b> Note: </b>  It is recommened to avoid using ENTER while filling information. It hinders with the alignment.
+          </div>
+          <br>
+          <br>
+
+
+
+
+<!-- personal information -->
+
+          <h3> Personal Information </h3>
+            <br>
+          <h5> Full Name : </h5>
+            {{ form.full_name }}
+            <br>
+          <h5> Mobile Number : </h5>
+            {{ form.mobile }}
+            <br>
+          <h5> Email Address :</h5>
+            {{ form.email }}
+            {{ form.catch }}
+          <br>
+          <br>
+
+
+<!-- summary -->
+
+          <h3> Summary </h3>
+            <br>
+            {{ form.summary }}
+            <br>
+            <br>
+
+
+
+<!-- Education details  -->
+
+
+
+
+            <div class="container">
+              <h3>Education </h3>
+                <br>
+              <!-- <div class="row"> -->
+                <h5> 1. School </h5>
+                {{ form.education_detail_1_1 }}
+                <br>
+                <h5> Degree </h5>
+                {{ form.education_detail_1_2 }}
+                <br>
+                <h5> Description </h5>
+                {{ form.education_detail_1_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 2. School </h5>
+                {{ form.education_detail_2_1 }}
+                <br>
+                <h5> Degree </h5>
+                {{ form.education_detail_2_2 }}
+                <br>
+                <h5> Description </h5>
+                {{ form.education_detail_2_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 3. School </h5>
+                {{ form.education_detail_3_1 }}
+                <br>
+                <h5> Degree </h5>
+                {{ form.education_detail_3_2 }}
+                <br>
+                <h5> Description </h5>
+                {{ form.education_detail_3_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 4. School </h5>
+                {{ form.education_detail_4_1 }}
+                <br>
+                <h5> Degree </h5>
+                {{ form.education_detail_4_2 }}
+                <br>
+                <h5> Description </h5>
+                {{ form.education_detail_4_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+            <!-- </div> -->
+
+
+
+<!-- Work Experience -->
+
+
+            <!-- <div class="container"> -->
+              <h3> Work Experience</h3>
+              <br>
+              <!-- <div class="row"> -->
+                <h5> 1. Title </h5>
+                {{ form.experience_1_1 }}
+                <br>
+                <h5> Company </h5>
+                {{ form.experience_1_2 }}
+                <br>
+                <h5> Roles and Responsibilities </h5>
+                {{ form.experience_1_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 2. Title </h5>
+                {{ form.experience_2_1 }}
+                <br>
+                <h5> Company  </h5>
+                {{ form.experience_2_2 }}
+                <br>
+                <h5> Roles and Responsibilities </h5>
+                {{ form.experience_2_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 3. Title </h5>
+                {{ form.experience_3_1 }}
+                <br>
+                <h5> Company  </h5>
+                {{ form.experience_3_2 }}
+                <br>
+                <h5> Roles and Responsibilities </h5>
+                {{ form.experience_3_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+
+
+              <!-- <div class="row"> -->
+                <h5> 4. Title </h5>
+                {{ form.experience_4_1 }}
+                <br>
+                <h5> Company  </h5>
+                {{ form.experience_4_2 }}
+                <br>
+                <h5> Roles and Responsibilities </h5>
+                {{ form.experience_4_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+
+
+
+              <h3> Certifications </h3>
+              <br>
+              <!-- <div class="row"> -->
+                <h5> 1. Certificate Name: </h5>
+                {{ form.certificate_1_1 }}
+                <br>
+                <h5> Certificate Authority: </h5>
+                {{ form.certificate_1_2 }}
+                <br>
+                <h5> Description/Link: </h5>
+                {{ form.certificate_1_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+
+              <!-- <div class="row"> -->
+                <h5> 2. Certificate Name: </h5>
+                {{ form.certificate_2_1 }}
+                <br>
+                <h5> Certificate Authority: </h5>
+                {{ form.certificate_2_2 }}
+                <br>
+                <h5> Description/Link: </h5>
+                {{ form.certificate_2_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+
+              <!-- <div class="row"> -->
+                <h5> 3. Certificate Name: </h5>
+                {{ form.certificate_3_1 }}
+                <br>
+                <h5> Certificate Authority: </h5>
+                {{ form.certificate_3_2 }}
+                <br>
+                <h5> Description/Link: </h5>
+                {{ form.certificate_3_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 4. Certificate Name: </h5>
+                {{ form.certificate_4_1 }}
+                <br>
+                <h5> Certificate Authority: </h5>
+                {{ form.certificate_4_2 }}
+                <br>
+                <h5> Description/Link: </h5>
+                {{ form.certificate_4_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+            <!-- </div> -->
+
+
+
+
+
+<!-- Honors and Awards -->
+
+            <!-- <div class="container"> -->
+              <h3> Honors and Awards </h3>
+              <br>
+              <!-- <div class="row"> -->
+                <h5> 1. Title: </h5>
+                {{ form.award_1_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.award_1_2 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 2. Title: </h5>
+                {{ form.award_2_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.award_2_2 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 3. Title: </h5>
+                {{ form.award_3_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.award_3_2 }}
+                <br>
+                <br>
+              <!-- </div> -->
+              <!-- </div> -->
+
+
+
+<!-- Projects -->
+
+            <!-- <div class="container"> -->
+              <h3> Projects </h3>
+              <br>
+              <!-- <div class="row"> -->
+                <h5> 1. Project Title: </h5>
+                {{ form.project_1_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.project_1_2 }}
+                <br>
+                <h5> Link: </h5>
+                {{ form.project_1_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 2. Project Title: </h5>
+                {{ form.project_2_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.project_2_2 }}
+                <br>
+                <h5> Link: </h5>
+                {{ form.project_2_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 3. Project Title: </h5>
+                {{ form.project_3_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.project_3_2 }}
+                <br>
+                <h5> Link: </h5>
+                {{ form.project_3_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 4. Project Title: </h5>
+                {{ form.project_4_1 }}
+                <br>
+                <h5> Description: </h5>
+                {{ form.project_4_2 }}
+                <br>
+                <h5> Link: </h5>
+                {{ form.project_4_3 }}
+                <br>
+                <br>
+              <!-- </div> -->
+            <!-- </div> -->
+
+
+            <!-- Skills -->
+
+
+            <!-- <div class="container"> -->
+
+              <h3> Skills </h3>
+              <br>
+              <!-- <div class="row"> -->
+                <h5> 1. Skill Type: </h5>
+                {{ form.skills_1_1 }}
+                <br>
+                <h5> Categories: </h5>
+                {{ form.skills_1_2 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+              <!-- <div class="row"> -->
+                <h5> 2. Skill Type: </h5>
+                {{ form.skills_2_1 }}
+                <br>
+                <h5> Categories: </h5>
+                {{ form.skills_2_2 }}
+                <br>
+                <br>
+              <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="container"> -->
+              <h3> Hobbies </h3>
+              <br>
+              <!-- <div class="row"> -->
+                {{ form.hobby_1_1 }}
+                <br>
+                <br>
+              <!-- </div> -->
+
+            </div>
+        </div>
+            <!-- {% csrf_token %} -->
+        <div class = 'text-center'>
+          <br>
+          <div class=" row">
+
+            <div class="col-sm-10">
+              <input type="submit" class="btn btn-success btn-block center-block" value=" Generate Resume ">
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="alert alert-info" role="alert">
+                <strong>Heads up!</strong> If there is an error while opening the document, make sure to force open it.
+              </div>
+
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+      </form>
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>

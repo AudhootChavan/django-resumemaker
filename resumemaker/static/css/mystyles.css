@@ -1,0 +1,33 @@
+
+.bg-custom {
+  background: #000000;
+}
+
+
+#messenger {
+  position: absolute;
+  top: 200px;
+  left: 5%;
+  font-family: 'Abril Fatface', cursive;
+  /* font-weight: 900; */
+  font-size: 4.5vw;
+  white-space: nowrap;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+.about {
+  position: absolute;
+  top: 400px;
+  left: 40%;
+  font-size: 25px;
+
+}
+
+.footer{
+  position: absolute;
+  top: 1000px;
+  left: 40%;
+  font-size: 12px;
+  /* background-color: #AfAfAf; */
+  /* padding: 20px 0px 20px 0px; */
+}
